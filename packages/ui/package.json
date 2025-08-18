@@ -8,18 +8,36 @@
   "scripts": {
     "lint": "eslint . --max-warnings 0",
     "generate:component": "turbo gen react-component",
-    "check-types": "tsc --noEmit"
+    "check-types": "tsc --noEmit",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "devDependencies": {
+    "@chromatic-com/storybook": "^4.1.0",
+    "@repo/theme": "*",
     "@repo/eslint-config": "*",
     "@repo/typescript-config": "*",
+    "@storybook/addon-a11y": "^9.1.2",
+    "@storybook/addon-docs": "^9.1.2",
+    "@storybook/addon-vitest": "^9.1.2",
+    "@storybook/react-vite": "^9.1.2",
     "@types/node": "^22.15.3",
     "@types/react": "19.1.0",
     "@types/react-dom": "19.1.1",
+    "@vitejs/plugin-react": "^5.0.0",
+    "@vitest/browser": "^3.2.4",
+    "@vitest/coverage-v8": "^3.2.4",
     "eslint": "^9.33.0",
-    "typescript": "5.9.2"
+    "eslint-plugin-storybook": "^9.1.2",
+    "playwright": "^1.54.2",
+    "storybook": "^9.1.2",
+    "typescript": "5.9.2",
+    "vite": "^6.3.5",
+    "vitest": "^3.2.4"
   },
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   }
