@@ -4,4 +4,11 @@ import storybook from "eslint-plugin-storybook";
 import { config } from "@repo/eslint-config/react-internal";
 
 /** @type {import("eslint").Linter.Config} */
-export default config;
+export default [
+  ...config,
+  {
+    rules: {
+      "@typescript-eslint/no-namespace": "off",
+    },
+  },
+];
