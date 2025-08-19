@@ -9,7 +9,19 @@ export const tokens = {
     bgLight: "#ffffff", // 밝은 배경
     bgDark: "#0b1020", // 어두운 배경
   },
-  radii: { md: 12, lg: 16 },
+  radii: { md: "12px", lg: "16px" },
   spacing: (n: number) => `${4 * n}px`,
+  fontSize: {
+    xl: "24px",
+    lg: "20px",
+    md: "16px",
+    sm: "14px",
+    xs: "12px",
+  },
+  fontWeight: {
+    bold: 700,
+    medium: 500,
+    regular: 400,
+  },
 };
 export type Tokens = typeof tokens;
