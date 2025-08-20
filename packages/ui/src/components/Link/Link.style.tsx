@@ -1,9 +1,8 @@
 import styled from "@emotion/styled";
-import { LinkFontSize, LinkFontWeight } from "./Link";
 
 export const LinkRoot = styled.a<{
-  $size: LinkFontSize;
-  $fontWeight: LinkFontWeight;
+  $size: "sm" | "md" | "lg";
+  $fontWeight: "bold" | "medium" | "regular";
 }>`
   display: flex;
   color: ${({ theme }) => theme.color.fg};
@@ -14,7 +13,11 @@ export const LinkRoot = styled.a<{
         ? theme.fontSize.md
         : theme.fontSize.lg};
   font-weight: ${({ $fontWeight, theme }) =>
-    $fontWeight === "bold" ? theme.fontWeight.bold : theme.fontWeight.medium};
+    $fontWeight === "bold"
+      ? theme.fontWeight.bold
+      : $fontWeight === "medium"
+        ? theme.fontWeight.medium
+        : theme.fontWeight.regular};
   text-decoration: underline;
   gap: ${({ theme }) => theme.spacing(0.5)};
   &:hover {

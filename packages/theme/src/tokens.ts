@@ -13,7 +13,7 @@ export const tokens = {
   radii: { md: "12px", lg: "16px" },
   spacing: (n: number) => `${4 * n}px`,
   fontSize: {
-    xl: "24px",
+    xl: "32px",
     lg: "20px",
     md: "16px",
     sm: "14px",

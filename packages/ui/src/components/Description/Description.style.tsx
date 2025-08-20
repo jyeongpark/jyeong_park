@@ -1,6 +1,9 @@
 import styled from "@emotion/styled";
 
-export const DescriptionRoot = styled.p<{ $size: "sm" | "md" | "lg" }>`
+export const DescriptionRoot = styled.p<{
+  $size: "sm" | "md" | "lg";
+  $fontWeight: "bold" | "medium" | "regular";
+}>`
   display: flex;
   color: ${({ theme }) => theme.color.fg};
   white-space: pre-wrap;
@@ -10,11 +13,21 @@ export const DescriptionRoot = styled.p<{ $size: "sm" | "md" | "lg" }>`
       : $size === "md"
         ? theme.fontSize.md
         : theme.fontSize.lg};
-  font-weight: ${({ theme }) => theme.fontWeight.medium};
+  font-weight: ${({ $fontWeight, theme }) =>
+    $fontWeight === "bold"
+      ? theme.fontWeight.bold
+      : $fontWeight === "medium"
+        ? theme.fontWeight.medium
+        : theme.fontWeight.regular};
 
   & > mark {
     background-color: ${({ theme }) => theme.color.primary};
     color: ${({ theme }) => theme.color.fg};
-    font-weight: ${({ theme }) => theme.fontWeight.bold};
+    font-weight: ${({ $fontWeight, theme }) =>
+      $fontWeight === "bold"
+        ? theme.fontWeight.bold
+        : $fontWeight === "medium"
+          ? theme.fontWeight.medium
+          : theme.fontWeight.regular};
   }
 `;

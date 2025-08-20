@@ -1,12 +1,9 @@
 import React from "react";
 import { LinkRoot } from "./Link.style";
 
-export type LinkFontSize = "sm" | "md" | "lg";
-export type LinkFontWeight = "bold" | "medium";
-
 export type LinkProps = React.AnchorHTMLAttributes<HTMLAnchorElement> & {
-  size: LinkFontSize;
-  fontWeight: LinkFontWeight;
+  size: "sm" | "md" | "lg";
+  fontWeight: "bold" | "medium" | "regular";
   text: string;
   href: string;
 };
