@@ -5,6 +5,7 @@ export const tokens = {
     accent: "#2563eb", // 블루 (대비 강조)
     accentHover: "#1d4ed8",
     fg: "#111827", // 진한 글자
+    fgSecondary: "#6b7280", // 중간 글자
     fgOnPrimary: "#1c1917", // 옐로우 위 글자 (가독성 위해 다크)
     bgLight: "#ffffff", // 밝은 배경
     bgDark: "#0b1020", // 어두운 배경
