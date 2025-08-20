@@ -12,6 +12,7 @@ export const HeadingRoot = styled.div<{
     $size === "lg" ? theme.fontSize.lg : theme.fontSize.xl};
   font-weight: ${({ theme }) => theme.fontWeight.bold};
   white-space: pre-wrap;
+  flex-wrap: wrap;
 
   & > mark {
     background-color: ${({ $color, theme }) =>

@@ -14,5 +14,20 @@ export function AppThemeProvider({
     () => (mode === "dark" ? darkTheme(tokens) : lightTheme(tokens)),
     [mode]
   );
-  return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
+  return (
+    <ThemeProvider theme={theme}>
+      <style>{`
+        body {
+          max-width: 100vw;
+          height: 100dvh;
+        }
+        *{
+        box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+        }
+      `}</style>
+      {children}
+    </ThemeProvider>
+  );
 }
