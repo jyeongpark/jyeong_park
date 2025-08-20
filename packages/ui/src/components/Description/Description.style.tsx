@@ -10,4 +10,11 @@ export const DescriptionRoot = styled.p<{ $size: "sm" | "md" | "lg" }>`
       : $size === "md"
         ? theme.fontSize.md
         : theme.fontSize.lg};
+  font-weight: ${({ theme }) => theme.fontWeight.medium};
+
+  & > mark {
+    background-color: ${({ theme }) => theme.color.primary};
+    color: ${({ theme }) => theme.color.fg};
+    font-weight: ${({ theme }) => theme.fontWeight.bold};
+  }
 `;

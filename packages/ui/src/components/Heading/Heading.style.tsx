@@ -12,4 +12,11 @@ export const HeadingRoot = styled.div<{
     $size === "lg" ? theme.fontSize.lg : theme.fontSize.xl};
   font-weight: ${({ theme }) => theme.fontWeight.bold};
   white-space: pre-wrap;
+
+  & > mark {
+    background-color: ${({ $color, theme }) =>
+      $color === "primary" ? theme.color.accent : theme.color.primary};
+    color: ${({ $color, theme }) =>
+      $color === "primary" ? theme.color.primary : theme.color.fg};
+  }
 `;

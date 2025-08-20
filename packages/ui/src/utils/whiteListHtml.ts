@@ -2,6 +2,6 @@
 
 export function whitelistHtml(html: string) {
   return html
-    .replace(/<(?!\/?(strong|b|em|i|u|a)(\s|>|\/))/gi, "&lt;")
+    .replace(/<(?!\/?(strong|b|em|i|u|a|mark)(\s|>|\/))/gi, "&lt;")
     .replace(/javascript:/gi, "");
 }

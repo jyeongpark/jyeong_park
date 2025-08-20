@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Heading, HeadingProps } from "./Heading";
+import { Heading } from "./Heading";
 
 const meta = {
   title: "Components/Heading",
@@ -68,6 +68,7 @@ export const WithAccent: Story = {
         "제목 <strong>강조</strong>",
         "제목 <u>강조</u>",
         "제목 <a href='https://www.naver.com'>강조</a>",
+        "제목 <mark>강조</mark>",
       ], // 고정된 후보만
     },
   },

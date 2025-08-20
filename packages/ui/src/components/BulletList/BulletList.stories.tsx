@@ -62,8 +62,14 @@ export const NoTitleBar: Story = {
   },
 };
 
-export const BoldLabel: Story = {
+export const WhitelistLabel: Story = {
   args: {
-    items: [{ label: "<strong>내용1</strong>" }],
+    items: [
+      { label: "내용 <strong>강조</strong>" },
+      { label: "내용 <em>강조</em>" },
+      { label: "내용 <u>강조</u>" },
+      { label: "내용 <a href='https://www.naver.com'>강조</a>" },
+      { label: "내용 <mark>강조</mark>" },
+    ],
   },
 };

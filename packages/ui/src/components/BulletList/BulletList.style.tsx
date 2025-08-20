@@ -33,7 +33,6 @@ export const Ul = styled.ul<{ $level: number }>`
   padding-left: ${({ theme, $level }) =>
     `calc(${theme.spacing(1)} * ${Math.max(0, $level)})`};
   display: grid;
-  /* gap: ${({ theme }) => theme.spacing(2)}; */
 `;
 
 export const Li = styled.li`
@@ -44,6 +43,12 @@ export const Li = styled.li`
   color: ${({ theme }) => theme.color.fg};
   line-height: 1.5;
   font-size: ${({ theme }) => theme.fontSize.md};
+  white-space: pre-wrap;
+
+  & mark {
+    background-color: ${({ theme }) => theme.color.primary};
+    color: ${({ theme }) => theme.color.fg};
+  }
 `;
 
 export const Marker = styled.span`
