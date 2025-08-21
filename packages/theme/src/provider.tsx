@@ -19,7 +19,7 @@ export function AppThemeProvider({
       <style>{`
         body {
           max-width: 100vw;
-          height: 100dvh;
+          min-height: 100dvh;
         }
         *{
         box-sizing: border-box;

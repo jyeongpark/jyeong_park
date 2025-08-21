@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 
-export const Wrapper = styled.section`
-  padding: ${({ theme }) => theme.spacing(2)};
+export const Wrapper = styled.div`
+  margin-block-start: ${({ theme }) => theme.spacing(2)};
 `;
 
 export const TitleRow = styled.div<{ $showBar: boolean }>`
@@ -13,16 +13,16 @@ export const TitleRow = styled.div<{ $showBar: boolean }>`
 
 export const TitleBar = styled.i`
   display: block;
-  width: 4px;
-  height: 24px;
+  width: 0.25rem;
+  height: 1.5rem;
   background: ${({ theme }) => theme.color.primary};
   border-radius: ${({ theme }) => theme.radii.md};
 `;
 
-export const TitleText = styled.h2`
+export const TitleText = styled.p`
   margin: 0;
   font-weight: ${({ theme }) => theme.fontWeight.bold};
-  font-size: ${({ theme }) => theme.fontSize.xl};
+  font-size: ${({ theme }) => theme.fontSize.lg};
   color: ${({ theme }) => theme.color.fg};
   line-height: normal;
 `;
@@ -37,7 +37,7 @@ export const Ul = styled.ul<{ $level: number }>`
 
 export const Li = styled.li`
   display: grid;
-  grid-template-columns: 8px auto;
+  grid-template-columns: 0.5rem auto;
   align-items: start;
   column-gap: ${({ theme }) => theme.spacing(1.5)};
   color: ${({ theme }) => theme.color.fg};

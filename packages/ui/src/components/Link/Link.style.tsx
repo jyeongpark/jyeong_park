@@ -20,12 +20,10 @@ export const LinkRoot = styled.a<{
         : theme.fontWeight.regular};
   text-decoration: underline;
   gap: ${({ theme }) => theme.spacing(0.5)};
-  &:hover {
-    scale: 1.05;
-  }
+
   &:focus-visible {
-    outline: 2px solid ${({ theme }) => theme.color.primary};
-    outline-offset: 2px;
-    border-radius: 4px;
+    outline: 0.125rem solid ${({ theme }) => theme.color.primary};
+    outline-offset: 0.125rem;
+    border-radius: 0.25rem;
   }
 `;
