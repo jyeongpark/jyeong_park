@@ -2,6 +2,7 @@ import styled from "@emotion/styled";
 
 export const Wrapper = styled.div`
   margin-block-start: ${({ theme }) => theme.spacing(2)};
+  page-break-inside: avoid; /* 중간 잘림 방지 */
 `;
 
 export const TitleRow = styled.div<{ $showBar: boolean }>`
