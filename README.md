@@ -1,135 +1,88 @@
-# Turborepo starter
+## Jyeong Park Monorepo
 
-This Turborepo starter is maintained by the Turborepo core team.
+개인 포트폴리오와 이력서를 운영하는 Turborepo 기반 모노레포입니다. Next.js 앱 두 개와 공용 UI/테마/린트/TS 설정 패키지를 포함합니다.
 
-## Using this example
+### 프로젝트 구조
 
-Run the following command:
+- `apps/portfolio`: 포트폴리오 Next.js 앱
+- `apps/resume`: 이력서 Next.js 앱 (콘텐츠 JSON 분리, 섹션 컴포넌트 기반)
+- `packages/ui`: 공용 React UI 컴포넌트 라이브러리
+- `packages/theme`: 디자인 토큰/테마 Provider
+- `packages/eslint-config`: 공용 ESLint 설정
+- `packages/typescript-config`: 공용 TypeScript 설정
 
-```sh
-npx create-turbo@latest
+### 빠른 시작
+
+```bash
+# 루트에서 의존성 설치
+npm install
+
+# 전체 개발 서버 실행
+npm run dev
+
+# 특정 앱만 실행
+npx turbo run dev --filter=apps/resume
+npx turbo run dev --filter=apps/portfolio
 ```
 
-## What's inside?
+### 앱 개별 실행
 
-This Turborepo includes the following packages/apps:
+```bash
+# Resume (Next.js)
+cd apps/resume
+npm run dev
 
-### Apps and Packages
-
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
-
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
-
-### Utilities
-
-This Turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-
-### Build
-
-To build all apps and packages, run the following command:
-
-```
-cd my-turborepo
-
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo build
-
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo build
-yarn dlx turbo build
-pnpm exec turbo build
+# Portfolio (Next.js)
+cd apps/portfolio
+npm run dev
 ```
 
-You can build a specific package by using a [filter](https://turborepo.com/docs/crafting-your-repository/running-tasks#using-filters):
+### 빌드/배포
 
-```
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo build --filter=docs
+```bash
+# 전체 빌드
+npm run build
 
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo build --filter=docs
-yarn exec turbo build --filter=docs
-pnpm exec turbo build --filter=docs
+# 특정 앱만 빌드
+npx turbo run build --filter=apps/resume
 ```
 
-### Develop
+### 테스트
 
-To develop all apps and packages, run the following command:
+- packages/ui storybook test
+- packages/ui cypress component test
 
-```
-cd my-turborepo
+설정 후 실행 예시:
 
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo dev
+```bash
+# 스토리북 테스트
+cd packages/ui
+npm run storybook
 
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo dev
-yarn exec turbo dev
-pnpm exec turbo dev
-```
-
-You can develop a specific package by using a [filter](https://turborepo.com/docs/crafting-your-repository/running-tasks#using-filters):
-
-```
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo dev --filter=web
-
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo dev --filter=web
-yarn exec turbo dev --filter=web
-pnpm exec turbo dev --filter=web
+# ct
+cd packages/ui
+npm run cy:open
 ```
 
-### Remote Caching
+### 기술 스택
 
-> [!TIP]
-> Vercel Remote Cache is free for all plans. Get started today at [vercel.com](https://vercel.com/signup?/signup?utm_source=remote-cache-sdk&utm_campaign=free_remote_cache).
+- Next.js(App Router), React 19, TypeScript
+- Emotion(스타일), 디자인 토큰/테마(`@repo/theme`)
+- 공용 UI 컴포넌트(`@repo/ui`)
+- Turborepo(워크스페이스/캐싱), Vercel(배포)
 
-Turborepo can use a technique known as [Remote Caching](https://turborepo.com/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
+### 아키텍처/품질
 
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup?utm_source=turborepo-examples), then enter the following commands:
+- 공용 패키지로 스타일/토큰/린트/TS 설정을 통합하여 일관성 확보
+- JSON 기반 콘텐츠 로딩(`apps/resume/src/_contents/**`)으로 무코드 업데이트 가능
+- 접근성/시멘틱 마크업 및 외부 링크 보안 속성(`rel="noopener noreferrer"`) 준수
 
-```
-cd my-turborepo
+### 컨벤션
 
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo login
+- 커밋: Conventional Commits 권장 (feat, fix, chore, refactor 등)
+- 코드 스타일: Prettier + ESLint
+- 네이밍: 축약 지양, 의미 있는 이름 사용
 
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo login
-yarn exec turbo login
-pnpm exec turbo login
-```
+### 라이선스
 
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
-
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
-
-```
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo link
-
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo link
-yarn exec turbo link
-pnpm exec turbo link
-```
-
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turborepo.com/docs/crafting-your-repository/running-tasks)
-- [Caching](https://turborepo.com/docs/crafting-your-repository/caching)
-- [Remote Caching](https://turborepo.com/docs/core-concepts/remote-caching)
-- [Filtering](https://turborepo.com/docs/crafting-your-repository/running-tasks#using-filters)
-- [Configuration Options](https://turborepo.com/docs/reference/configuration)
-- [CLI Usage](https://turborepo.com/docs/reference/command-line-reference)
+개인 포트폴리오 목적의 공개 저장소입니다. 별도 명시가 없는 한 MIT 호환 라이선스를 따릅니다.
