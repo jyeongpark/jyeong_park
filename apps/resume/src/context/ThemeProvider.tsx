@@ -15,10 +15,10 @@ export default function ThemeProvider({
 }
 
 const ResumeLayout = styled.main`
-  height: 100vh;
+  min-height: 100vh;
   padding: 2rem;
 
   & > section {
-    margin-block-end: ${({ theme }) => theme.spacing(4)};
+    margin-block-end: ${({ theme }) => theme.spacing(5)};
   }
 `;

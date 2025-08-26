@@ -1,0 +1,33 @@
+{
+  "list": [
+    {
+      "title": "000 동아리 활동",
+      "description": "000 동아리에서 frontend 개발자 및 기획 참여",
+      "startDate": "2025.01",
+      "endDate": "2025.02",
+      "link": "www.google.com",
+      "experience": [
+        {
+          "items": [
+            {
+              "label": "<b>활동</b>으로 인한 ~~~",
+              "children": [
+                {
+                  "label": "<mark>중요</mark>한 일"
+                }
+              ]
+            },
+            {
+              "label": "<b>활동</b>으로 인한 ~~~",
+              "children": [
+                {
+                  "label": "<mark>중요</mark>한 일"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

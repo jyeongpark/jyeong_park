@@ -1,0 +1,68 @@
+{
+  "list": [
+    {
+      "name": "Company 1",
+      "position": "Position 1",
+      "startDate": "2020.1",
+      "endDate": "2021.10",
+      "description": "Description 1",
+      "experience": [
+        {
+          "title": {
+            "showBar": true,
+            "text": "작업1"
+          },
+          "items": [
+            {
+              "label": "작업 <mark>중요한 일</mark> 입니다.",
+              "children": [{ "label": "작업 <b>중요한 일</b> 입니다." }]
+            }
+          ]
+        },
+        {
+          "title": {
+            "showBar": true,
+            "text": "작업2"
+          },
+          "items": [
+            {
+              "label": "작업입니다."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Company 2",
+      "position": "Position 2",
+      "startDate": "2020.1",
+      "endDate": "2021.10",
+      "description": "Description 2",
+      "experience": [
+        {
+          "title": {
+            "showBar": true,
+            "text": "작업1"
+          },
+          "items": [
+            {
+              "label": "작업 <mark>중요한 일</mark> 입니다.",
+              "children": [{ "label": "작업 <b>중요한 일</b> 입니다." }]
+            }
+          ]
+        },
+        {
+          "title": {
+            "showBar": true,
+            "text": "작업2"
+          },
+          "items": [
+            {
+              "label": "작업입니다."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

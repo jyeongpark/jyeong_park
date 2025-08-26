@@ -1,0 +1,9 @@
+{
+  "email": { "value": "email@example.com" },
+  "github": { "link": "https://github.com/username", "value": "깃허브 주소" },
+  "linkedin": {
+    "link": "https://www.linkedin.com/in/username",
+    "value": "링크드인 주소"
+  },
+  "phone": { "value": "010-1234-5678" }
+}

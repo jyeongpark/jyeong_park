@@ -1,0 +1,13 @@
+{
+  "list": [
+    {
+      "title": "대학교",
+      "startDate": "0000.00",
+      "experience": [
+        {
+          "items": [{ "label": "00전공" }]
+        }
+      ]
+    }
+  ]
+}
