@@ -39,10 +39,10 @@
     "vite": "^6.3.5",
     "vitest": "^3.2.4"
   },
-  "dependencies": {
+  "peerDependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
     "@emotion/react": "^11.14.0",
-    "@emotion/styled": "^11.14.1",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "@emotion/styled": "^11.14.0"
   }
 }
