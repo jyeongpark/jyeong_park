@@ -1,5 +1,7 @@
 import { BulletListProps } from "@repo/ui";
-import { loadWithFallback } from "../_loader/loader";
+import path from "node:path";
+import sample from "./sample.data.json";
+import { readJsonIfExists } from "../_loader/loader";
 
 export interface ActivityData {
   list: {
@@ -13,18 +15,15 @@ export interface ActivityData {
 }
 
 export async function loadActivityData(): Promise<ActivityData> {
-  return loadWithFallback<ActivityData>(
-    // real
-    async () => {
-      const mod = await import("./data.json");
-      const data = mod.default satisfies ActivityData;
-      return data;
-    },
-    // sample
-    async () => {
-      const mod = await import("./sample.data.json");
-      const data = mod.default satisfies ActivityData;
-      return data;
-    }
+  const repoRoot = process.cwd();
+  const dataPath = path.join(
+    repoRoot,
+    "src",
+    "_contents",
+    "Activity",
+    "data.json"
   );
+
+  const real = await readJsonIfExists<ActivityData>(dataPath);
+  return real ?? (sample as ActivityData);
 }

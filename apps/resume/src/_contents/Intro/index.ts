@@ -1,4 +1,6 @@
-import { loadWithFallback } from "../_loader/loader";
+import path from "node:path";
+import sample from "./sample.data.json";
+import { readJsonIfExists } from "../_loader/loader";
 
 export interface IntroData {
   title: string;
@@ -6,18 +8,15 @@ export interface IntroData {
 }
 
 export async function loadIntroData(): Promise<IntroData> {
-  return loadWithFallback<IntroData>(
-    // real
-    async () => {
-      const mod = await import("./data.json");
-      const data = mod.default satisfies IntroData; // 컴파일타임 검증
-      return data;
-    },
-    // sample
-    async () => {
-      const mod = await import("./sample.data.json");
-      const data = mod.default satisfies IntroData;
-      return data;
-    }
+  const repoRoot = process.cwd();
+  const dataPath = path.join(
+    repoRoot,
+    "src",
+    "_contents",
+    "Intro",
+    "data.json"
   );
+
+  const real = await readJsonIfExists<IntroData>(dataPath);
+  return real ?? (sample as IntroData);
 }

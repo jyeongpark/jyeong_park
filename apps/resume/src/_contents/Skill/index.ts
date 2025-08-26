@@ -1,22 +1,21 @@
-import { loadWithFallback } from "../_loader/loader";
+import path from "node:path";
+import sample from "./sample.data.json";
+import { readJsonIfExists } from "../_loader/loader";
 
 export interface SkillData {
   list: { title: string; skills: string[] }[];
 }
 
 export async function loadSkillData(): Promise<SkillData> {
-  return loadWithFallback<SkillData>(
-    // real
-    async () => {
-      const mod = await import("./data.json");
-      const data = mod.default satisfies SkillData; // 컴파일타임 검증
-      return data;
-    },
-    // sample
-    async () => {
-      const mod = await import("./sample.data.json");
-      const data = mod.default satisfies SkillData;
-      return data;
-    }
+  const repoRoot = process.cwd();
+  const dataPath = path.join(
+    repoRoot,
+    "src",
+    "_contents",
+    "Skill",
+    "data.json"
   );
+
+  const real = await readJsonIfExists<SkillData>(dataPath);
+  return real ?? (sample as SkillData);
 }

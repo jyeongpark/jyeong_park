@@ -1,5 +1,7 @@
 import { BulletListProps } from "@repo/ui";
-import { loadWithFallback } from "../_loader/loader";
+import path from "node:path";
+import sample from "./sample.data.json";
+import { readJsonIfExists } from "../_loader/loader";
 
 export interface Company {
   name: string;
@@ -16,18 +18,15 @@ export interface WorkExperienceData {
 }
 
 export async function loadWorkExperienceData(): Promise<WorkExperienceData> {
-  return loadWithFallback<WorkExperienceData>(
-    // real
-    async () => {
-      const mod = await import("./data.json");
-      const data = mod.default satisfies WorkExperienceData; // 컴파일타임 검증
-      return data;
-    },
-    // sample
-    async () => {
-      const mod = await import("./sample.data.json");
-      const data = mod.default satisfies WorkExperienceData;
-      return data;
-    }
+  const repoRoot = process.cwd();
+  const dataPath = path.join(
+    repoRoot,
+    "src",
+    "_contents",
+    "WorkExperience",
+    "data.json"
   );
+
+  const real = await readJsonIfExists<WorkExperienceData>(dataPath);
+  return real ?? (sample as WorkExperienceData);
 }
