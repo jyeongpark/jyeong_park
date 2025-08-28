@@ -5,7 +5,7 @@ export const LinkRoot = styled.a<{
   $fontWeight: "bold" | "medium" | "regular";
 }>`
   display: flex;
-  color: ${({ theme }) => theme.color.fg};
+  color: ${({ theme }) => theme.color.text};
   font-size: ${({ $size, theme }) =>
     $size === "sm"
       ? theme.fontSize.sm

@@ -24,7 +24,7 @@ export const TitleText = styled.p`
   margin: 0;
   font-weight: ${({ theme }) => theme.fontWeight.bold};
   font-size: ${({ theme }) => theme.fontSize.lg};
-  color: ${({ theme }) => theme.color.fg};
+  color: ${({ theme }) => theme.color.text};
   line-height: normal;
 `;
 
@@ -41,14 +41,15 @@ export const Li = styled.li`
   grid-template-columns: 0.5rem auto;
   align-items: start;
   column-gap: ${({ theme }) => theme.spacing(1.5)};
-  color: ${({ theme }) => theme.color.fg};
+  color: ${({ theme }) => theme.color.text};
   line-height: 1.5;
   font-size: ${({ theme }) => theme.fontSize.md};
   white-space: pre-wrap;
 
   & mark {
     background-color: ${({ theme }) => theme.color.primary};
-    color: ${({ theme }) => theme.color.fg};
+    color: ${({ theme }) => theme.color.markText};
+    /* font-weight: ${({ theme }) => theme.fontWeight.bold}; */
   }
 `;
 
@@ -56,5 +57,5 @@ export const Marker = styled.span`
   display: inline-flex;
   justify-content: center;
   line-height: 1.5;
-  color: ${({ theme }) => theme.color.fg};
+  color: ${({ theme }) => theme.color.text};
 `;

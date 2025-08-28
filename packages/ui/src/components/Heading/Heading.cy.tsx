@@ -21,7 +21,11 @@ describe("<Heading /> 렌더링 확인", () => {
 
     cy.dataCy("Heading").should("contain.text", "제목");
     // 색상 확인
-    cy.dataCy("Heading").should("have.css", "color", hexToRgb(tokens.color.fg));
+    cy.dataCy("Heading").should(
+      "have.css",
+      "color",
+      hexToRgb(tokens.color.text)
+    );
   });
 
   it("primary 색상 확인", () => {

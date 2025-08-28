@@ -7,7 +7,7 @@ export const HeadingRoot = styled.div<{
   $textDecoration?: "underline" | "none";
 }>`
   color: ${({ $color, theme }) =>
-    $color === "primary" ? theme.color.primary : theme.color.fg};
+    $color === "primary" ? theme.color.primary : theme.color.text};
   display: flex;
   align-items: center;
   font-size: ${({ $size, theme }) =>
@@ -20,7 +20,7 @@ export const HeadingRoot = styled.div<{
     $textDecoration &&
     css`
       border-bottom: 0.125rem solid
-        ${$color === "primary" ? theme.color.primary : theme.color.fg};
+        ${$color === "primary" ? theme.color.primary : theme.color.text};
       width: 100%;
       margin-bottom: ${theme.spacing(1)};
     `}
@@ -29,6 +29,6 @@ export const HeadingRoot = styled.div<{
     background-color: ${({ $color, theme }) =>
       $color === "primary" ? theme.color.accent : theme.color.primary};
     color: ${({ $color, theme }) =>
-      $color === "primary" ? theme.color.primary : theme.color.fg};
+      $color === "primary" ? theme.color.primary : theme.color.markText};
   }
 `;

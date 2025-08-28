@@ -7,7 +7,7 @@ export const SectionRoot = styled.section`
 
   /* divider 유틸 */
   .divider {
-    border-block-end: 1px solid ${({ theme }) => theme.color.fgLight};
+    border-block-end: 1px solid ${({ theme }) => theme.color.border};
     padding-block-end: ${({ theme }) => theme.spacing(2)};
     margin-block-end: ${({ theme }) => theme.spacing(2)};
   }

@@ -5,7 +5,7 @@ export const DescriptionRoot = styled.p<{
   $fontWeight: "bold" | "medium" | "regular";
 }>`
   display: flex;
-  color: ${({ theme }) => theme.color.fg};
+  color: ${({ theme }) => theme.color.text};
   white-space: pre-wrap;
   font-size: ${({ $size, theme }) =>
     $size === "sm"
@@ -22,7 +22,7 @@ export const DescriptionRoot = styled.p<{
 
   & > mark {
     background-color: ${({ theme }) => theme.color.primary};
-    color: ${({ theme }) => theme.color.fg};
+    color: ${({ theme }) => theme.color.markText};
     font-weight: ${({ $fontWeight, theme }) =>
       $fontWeight === "bold"
         ? theme.fontWeight.bold

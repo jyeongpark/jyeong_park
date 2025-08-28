@@ -10,9 +10,7 @@ export const lightTheme = (t: Tokens): AppTheme => ({
   mode: "light",
   color: {
     ...t.color,
-    fg: "#111827",
-    bgLight: t.color.bgLight,
-    bgDark: t.color.bgDark,
+    text: "#111827",
   },
 });
 
@@ -21,8 +19,6 @@ export const darkTheme = (t: Tokens): AppTheme => ({
   mode: "dark",
   color: {
     ...t.color,
-    fg: "#f9fafb",
-    bgLight: t.color.bgLight,
-    bgDark: t.color.bgDark,
+    text: "#f9fafb",
   },
 });

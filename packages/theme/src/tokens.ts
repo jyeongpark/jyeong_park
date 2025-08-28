@@ -1,15 +1,11 @@
 export const tokens = {
   color: {
-    primary: "#facc15", // 메인 옐로우
-    primaryHover: "#eab308", // hover 시 골드 느낌
-    accent: "#2563eb", // 블루 (대비 강조)
-    accentHover: "#1d4ed8",
-    fg: "#111827", // 진한 글자
-    fgSecondary: "#6b7280", // 중간 글자
-    fgLight: "#d9dadb", // 밝은 글자
-    fgOnPrimary: "#1c1917", // 옐로우 위 글자 (가독성 위해 다크)
-    bgLight: "#ffffff", // 밝은 배경
-    bgDark: "#0b1020", // 어두운 배경
+    primary: "#facc15", // 메인 컬러
+    accent: "#2563eb", // 메인 컬러 대비 강조 컬러
+    text: "#111827", // 기본 텍스트
+    lightText: "#6b7280", // 밝은 텍스트
+    border: "#d9dadb", // 구분선
+    markText: "#111827", // 메인 컬러 위에 들어갈 텍스트 컬러
   },
   radii: { md: "0.75rem", lg: "1rem" }, // 12px, 16px
   spacing: (n: number) => `${0.25 * n}rem`, // 1 = 0.25rem (4px)
